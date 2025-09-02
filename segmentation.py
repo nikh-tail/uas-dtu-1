@@ -1,4 +1,4 @@
- import cv2
+import cv2
 import numpy as np
 from config import HSV_THRESHOLDS
 
@@ -8,9 +8,7 @@ def segment_land_ocean(img):
 
     # Masks for ocean and land
     ocean_mask = cv2.inRange(hsv, HSV_THRESHOLDS["ocean"][0], HSV_THRESHOLDS["ocean"][1])
-    land_mask1 = cv2.inRange(hsv, HSV_THRESHOLDS["land1"][0], HSV_THRESHOLDS["land1"][1])
-    land_mask2 = cv2.inRange(hsv, HSV_THRESHOLDS["land2"][0], HSV_THRESHOLDS["land2"][1])
-    land_mask = cv2.bitwise_or(land_mask1, land_mask2)
+    land_mask = cv2.inRange(hsv, HSV_THRESHOLDS["land"][0], HSV_THRESHOLDS["land"][1])
 
     # Overlay for visualization
     overlay = np.zeros_like(img)
@@ -18,4 +16,7 @@ def segment_land_ocean(img):
     overlay[land_mask > 0] = [0, 255, 0]     # green for land
 
     return ocean_mask, land_mask, overlay
+
+
+
 
