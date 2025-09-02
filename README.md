@@ -26,8 +26,4 @@ This module handles the logic of who gets rescued and where they go:
 - Scores each possible pairing based on urgency and proximity
 - Assigns casualties to pads using a greedy approach, while respecting pad capacities
 
-📐 **How scoring works**:
-```python
-score = age_priority × emergency_priority
-utility = score - (distance / max_distance)
 
