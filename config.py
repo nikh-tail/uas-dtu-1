@@ -1,5 +1,6 @@
-IMAGE_DIR = "input_images/"
-OUTPUT_DIR = "output/"
+
+IMAGE_DIR = "input_images"
+OUTPUT_DIR = "output"
 
 PAD_CAPACITY = {"pink": 3, "blue": 4, "grey": 2}
 AGE_PRIORITY = {"star": 3, "triangle": 2, "square": 1}
@@ -15,4 +16,6 @@ HSV_THRESHOLDS = {
     "green": ((36, 80, 60), (85, 255, 255)),
     "pink": ((140, 80, 80), (170, 255, 255)),
     "blue": ((90, 80, 80), (130, 255, 255)),
+    "grey": ((0, 0, 50), (180, 50, 255)),
 }
+
